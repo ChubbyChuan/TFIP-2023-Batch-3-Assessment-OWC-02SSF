@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Top Secret</title>
+</head>
+
+<body>
+	<form method="GET" data-th-action="@{/login}" data-th-object="${user}"></form>
+	<h2 data-th-text=“|${error} - ${message}|”></h2>
+	</div>
+	<p>
+		Your login
+		<span data-th-text=“${username}”></span>
+		has been deactivated for 30 mins
+
+	</p>
+	<div>
+		<button>Back</button>
+	</div>
+
+</body>
+
+</html>

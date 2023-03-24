@@ -11,7 +11,7 @@
 	<body>
 
 		<h2>Please Login</h2>
-
+		<form method="POST" data-th-action="@{/login}" data-th-object="${user}"></form>
 		<table>
 			<tr>
 				<td> 
@@ -19,7 +19,10 @@
 				</td>
 				<td>
 					<input type="text" id="username" size="30" 
-							placeholder="Please type in your username" >
+							placeholder="Please type in your username"
+							data-th-field="*{username}" >
+					<div data-th-if="${#fields.hasErrors('username')}">
+								<span data-th-errors="*{username}"></span>
 				</td>
 			</tr>
 			<tr>
@@ -28,7 +31,22 @@
 				</td>
 				<td>
 					<input type="password" id="password" size="30" 
-							placeholder="Please type in your password">
+							placeholder="Please type in your password"
+							data-th-field="*{password}">
+					<div data-th-if="${#fields.hasErrors('password')}">
+								<span data-th-errors="*{password}"></span>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<label for="captcha">Captcha:</label>
+				</td>
+				<td>
+					<input type="text" id="captcha" size="30" 
+							placeholder="Answer"
+							data-th-field="*{captcha}">
+					<div data-th-if="${#fields.hasErrors('captcha')}">
+								<span data-th-errors="*{captcha}"></span>
 				</td>
 			</tr>
 			<tr>
